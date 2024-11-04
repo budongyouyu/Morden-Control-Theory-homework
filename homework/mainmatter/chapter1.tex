@@ -1,0 +1,67 @@
+\chapter{Morden Control. Exerscise}
+
+现代控制理论，高立群，清华大学出版社，第2版 
+\vspace{2em}
+
+\begin{question}[p60,2.1]
+\end{question}
+\begin{mdframed}[linewidth=0pt, backgroundcolor=gray!12]
+    \begin{pf}
+        令$C_1,C_2$两端电压为$u_{c_1},u_{c_2}$为状态变量$x_1,x_2$
+        \begin{equation}
+            u_{c_1}+C_1\frac{d u_{c_1}}{dt}\cdot R_2+u_{c_2}=u_1
+        \end{equation}
+        \begin{equation}
+            C_1\frac{d u_{c_1}}{dt}+\frac{u_{c_1}}{R_1}=C_2\frac{du_{c_2}}{dt}
+        \end{equation}
+
+        整理
+        \begin{equation}
+            \frac{d u_{c_1}}{dt} = -\frac{R_1+R_2C_1}{R_2C_2}u_{c_1}+\frac{1}{R_2C_1}u_{c_2}+\frac{1}{R_2C_1}u_1
+        \end{equation}
+        \begin{equation}
+            \frac{d u_{c_2}}{dt} = -\frac{1}{R_2C_2}u_{c_1}-\frac{1}{R_2C_2}u_{c_2}+\frac{1}{R_2C_2}u_1
+        \end{equation}
+
+        写成状态方程的形式
+        \begin{equation}
+            \left[
+                \begin{array}{c}
+                    \dot{x}_1\\
+                    \dot{x}_2
+                \end{array}
+            \right]=
+            \left[
+                \begin{array}{cc}
+                    -\frac{R_1+R_2C_1}{R_2C_2} & \frac{1}{R_2C_1} \\
+                    -\frac{1}{R_2C_2}          & -\frac{1}{R_2C_2}
+                \end{array}
+            \right]
+            \left[
+                \begin{array}{c}
+                    x_1\\
+                    x_2
+                \end{array}
+            \right]+
+            \left[
+                \begin{array}{c}
+                    \frac{1}{R_2C_1}\\
+                    \frac{1}{R_2C_2}
+                \end{array}
+            \right]u_1
+        \end{equation}
+
+        输入与输出的关系
+        \begin{equation}
+            y=u_1-u_{c_1}=[-1,0]
+            \left[
+                \begin{array}{c}
+                    x_1 \\
+                    x_2 
+                \end{array}
+            \right]+
+            u_1
+        \end{equation}
+    \end{pf}
+\end{mdframed}
+
